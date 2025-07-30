@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - QuizXMentor</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body onload="checkAuth(); loadDashboard();">
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h2>QuizXMentor</h2>
+        </div>
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <button onclick="handleLogout()" class="nav-btn">Logout</button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <h1>Dashboard</h1>
+            <div class="user-info">
+                <span>Welcome, <strong id="userEmail"></strong></span>
+                <span id="adminBadge" style="display: none; background: var(--primary-teal); color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-left: 1rem;">ADMIN</span>
+            </div>
+        </div>
+        
+        <div class="dashboard-info">
+            <div class="info-card">
+                <h3>⏱️ Quiz Features</h3>
+                <p>30-second timer per question with automatic progression and real-time progress tracking</p>
+            </div>
+            <div class="info-card">
+                <h3>📊 Excel Integration</h3>
+                <p>Upload questions using our Excel template with multiple choice options and automated grading</p>
+            </div>
+        </div>
+        
+        <!-- Admin Panel -->
+        <div id="adminPanel" style="display: none; background: #f8f9fa; padding: 2rem; border-radius: 10px; margin: 2rem 0; border-left: 4px solid var(--primary-teal);">
+            <h3 style="color: var(--primary-teal); margin-bottom: 1.5rem;">🔧 Admin Panel</h3>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="/upload.html" class="btn">📤 Upload File</a>
+                <button onclick="previewQuiz()" class="btn">👁️ Preview Quiz</button>
+            </div>
+        </div>
+        
+        <div class="actions" id="regularActions">
+            <button onclick="checkAndStartQuiz()" class="btn">🎯 Start Quiz</button>
+        </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 QuizXMentor. All rights reserved.</p>
+    </footer>
+    
+    <script src="/js/api-client.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

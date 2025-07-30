@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - QuizXMentor</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h2>QuizXMentor</h2>
+        </div>
+        <div class="nav-links" id="navLinks"></div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <h2>Login to Your Account</h2>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            
+            <p style="text-align: center; margin-top: 2rem;">
+                <a href="/register.html" style="color: var(--primary-teal); text-decoration: none; font-weight: 500;">Don't have an account? Register here</a>
+            </p>
+            
+            <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; margin-top: 2rem; border-left: 4px solid var(--primary-teal);">
+                <h4 style="color: var(--primary-teal); margin-bottom: 1rem;">🔑 Admin Login</h4>
+                <p style="margin: 0.5rem 0;"><strong>Email:</strong> admin@g.com</p>
+                <p style="margin: 0.5rem 0;"><strong>Password:</strong> admin123</p>
+                <p style="font-size: 0.9rem; color: var(--dark-gray); margin-top: 1rem;">Admin users can upload questions.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 QuizXMentor. All rights reserved.</p>
+    </footer>
+
+    <script src="/js/api-client.js"></script>
+    <script src="/js/common.js"></script>
+</body>
+</html>

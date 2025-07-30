@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - QuizXMentor</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body onload="checkAuth(); startQuizWithTimer();">
+    <div class="timer" id="timer">30</div>
+    
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h2>QuizXMentor</h2>
+        </div>
+        <div class="nav-links">
+            <button onclick="confirmQuitQuiz()" class="nav-btn" style="background: #dc3545;">Quit Quiz</button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+            </div>
+            
+            <div id="quizContainer">
+                <p>Loading questions...</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 QuizXMentor. All rights reserved.</p>
+    </footer>
+    
+    <script src="/js/api-client.js"></script>
+    <script src="/js/common.js"></script>
+</body>
+</html>

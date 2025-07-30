@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Answers - QuizXMentor</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body onload="loadAnswers();">
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h2>QuizXMentor</h2>
+        </div>
+        <div class="nav-links">
+            <a href="/dashboard.html">Dashboard</a>
+            <button onclick="handleLogout()" class="nav-btn">Logout</button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <h1>Quiz Answers</h1>
+            <div id="answersContainer"></div>
+            <div class="actions">
+                <a href="/result.html" class="btn">Back to Results</a>
+                <a href="/dashboard.html" class="btn">Dashboard</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 QuizXMentor. All rights reserved.</p>
+    </footer>
+    
+    <script src="/js/api-client.js"></script>
+    <script src="/js/common.js"></script>
+</body>
+</html>

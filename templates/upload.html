@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Questions - QuizXMentor</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body onload="checkAuth(); checkAdminAccess();">
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h2>QuizXMentor</h2>
+        </div>
+        <div class="nav-links" id="navLinks"></div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+        <h2>Upload Quiz Questions</h2>
+        <p style="text-align: center; color: var(--dark-gray); margin-bottom: 2rem;">Upload an Excel file with your quiz questions</p>
+        
+        <div class="upload-info" style="background: var(--light-gray); padding: 2rem; border-radius: 10px; margin-bottom: 2rem;">
+            <h4 style="color: var(--primary-teal); margin-bottom: 1rem;">Excel Format Requirements:</h4>
+            <ul style="color: var(--text-dark); line-height: 1.8;">
+                <li>Column A: <strong>Question</strong> - The quiz question</li>
+                <li>Column B: <strong>Option_A</strong> - First option</li>
+                <li>Column C: <strong>Option_B</strong> - Second option</li>
+                <li>Column D: <strong>Option_C</strong> - Third option</li>
+                <li>Column E: <strong>Option_D</strong> - Fourth option</li>
+                <li>Column F: <strong>Correct_Ans</strong> - Correct answer (A, B, C, or D)</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <a href="/questions_template.xlsx" download class="btn" style="background: var(--light-teal);">
+                📥 Download Excel Template
+            </a>
+        </div>
+        
+        <form onsubmit="handleUpload(event)" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">Select Excel File (.xlsx or .xls):</label>
+                <input type="file" id="file" name="file" accept=".xlsx,.xls" required style="padding: 1.5rem; border: 2px dashed var(--primary-teal); background: var(--light-gray); border-radius: 10px;">
+            </div>
+            <div style="text-align: center;">
+                <button type="submit" id="uploadBtn">Upload Questions</button>
+            </div>
+        </form>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="/dashboard.html" style="color: var(--primary-teal); text-decoration: none; font-weight: 500;">← Back to Dashboard</a>
+        </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 QuizXMentor. All rights reserved.</p>
+    </footer>
+    
+    <script src="/js/api-client.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/upload.js"></script>
+</body>
+</html>

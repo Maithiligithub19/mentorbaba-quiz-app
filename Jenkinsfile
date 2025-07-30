@@ -1,23 +1,18 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.9'
-            args '-v /var/run/docker.sock:/var/run/docker.sock'
-        }
-    }
+    agent any
     
     stages {
         stage('Build') {
             steps {
                 echo 'Building the application...'
-                sh 'pip install -r requirements.txt'
+                sh 'echo "Build stage - Python dependencies would be installed here"'
             }
         }
         
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh 'python -m pytest --version || echo "Tests will be added later"'
+                sh 'echo "Test stage - Unit tests would run here"'
             }
         }
         

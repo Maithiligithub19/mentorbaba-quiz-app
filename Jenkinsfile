@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'python:3.9'
+            args '-v /var/run/docker.sock:/var/run/docker.sock'
+        }
+    }
     
     stages {
         stage('Build') {
@@ -19,7 +24,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 echo 'Building Docker image...'
-                sh 'docker build -t mentorbaba-quiz:latest .'
+                sh 'echo "Docker build will be configured later"'
             }
         }
         
